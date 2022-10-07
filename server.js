@@ -11,6 +11,20 @@ const app = express();
 var cors = require('cors');
 const adminRoutes = require("./route/admin/adminRoute");
 app.use(cors());
+
+const whitelist = ["https://blog-app-sigma-three.vercel.app/"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+app.use(cors(corsOptions))
+
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
