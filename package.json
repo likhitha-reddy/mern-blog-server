@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "server": "nodemon server.js",
-    "proxy": "http://localhost:5000"
+    "proxy": "https://git.heroku.com/mern-blog-api-v9.git"
   },
   "author": "likhith@",
   "license": "ISC",
