@@ -11,13 +11,6 @@ const app = express();
 var cors = require('cors');
 const adminRoutes = require("./route/admin/adminRoute");
 app.use(cors());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", '*');
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-  next();
-});
 {/*
 const corsOptions = { origin: ["https://git.heroku.com/mern-blog-api-v9.git"], credentials: true }
 
