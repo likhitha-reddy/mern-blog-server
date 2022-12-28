@@ -18,11 +18,12 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
   next();
 });
+{/*
 const corsOptions = { origin: ["https://git.heroku.com/mern-blog-api-v9.git"], credentials: true }
 
 app.use(cors(corsOptions));
 
-{/*
+*/}
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -30,7 +31,7 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-*/}
+
 dbConnect();
 app.use(express.json());
 app.use("/api/users", userRoutes);
